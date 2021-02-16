@@ -8,12 +8,12 @@ end)
 
 function m:OnLoad()
   eventHandler:RegisterEvent("PLAYER_LOGIN")
-
+  
   function eventHandler:PLAYER_LOGIN()
     -- Action camera
     UIParent:UnregisterEvent("EXPERIMENTAL_CVAR_CONFIRMATION_NEEDED")
   end
-
+  
   function m:MaxCamDistance(disabled)
     self.db.maxCamDistance = disabled
     if disabled then

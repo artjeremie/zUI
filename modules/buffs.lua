@@ -3,10 +3,10 @@ BuffFrame:SetScale(1.1)
 
 -- Move debuff
 hooksecurefunc("BuffFrame_UpdateAllBuffAnchors", function()
-	if DebuffButton1 then
-		DebuffButton1:ClearAllPoints()
-		DebuffButton1:SetPoint("TOP", UIParent, "TOPLEFT", 475, -215)
-	end
+  if DebuffButton1 then
+    DebuffButton1:ClearAllPoints()
+    DebuffButton1:SetPoint("TOP", UIParent, "TOPLEFT", 475, -215)
+  end
 end)
 
 --[[

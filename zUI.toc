@@ -1,0 +1,35 @@
+## Interface: 90002
+## Title: |cff00ff00z|r|cff009cffUI|r
+## Author: xHoaxDreamx, Signal-Proudmoore
+## Version: 9.0.2.1
+## SavedVariables: zUIDB
+## Notes: Lightweight modification of blizzard UI.
+
+# libs
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+libs\AceDB-3.0\AceDB-3.0.xml
+libs\AceDBOptions-3.0\AceDBOptions-3.0.xml
+libs\AceGUI-3.0\AceGUI-3.0.xml
+libs\AceConfig-3.0\AceConfig-3.0.xml
+
+# zUI core
+core.lua
+
+# modules
+modules\actionbar.lua
+modules\buffs.lua
+modules\camera.lua
+modules\castbar.lua
+modules\chat.lua
+modules\coords.lua
+modules\easydelete.lua
+modules\extras.lua
+modules\grid.lua
+modules\latency.lua
+modules\mail.lua
+modules\misc.lua
+modules\nameplate.lua
+modules\tooltip.lua
+modules\unitframes.lua
+modules\placeholder.lua

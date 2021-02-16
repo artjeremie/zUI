@@ -18,6 +18,7 @@ core.lua
 
 # modules
 modules\actionbar.lua
+modules\arenatimer.lua
 modules\buffs.lua
 modules\camera.lua
 modules\castbar.lua

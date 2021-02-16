@@ -11,6 +11,7 @@ UIParent:UnregisterEvent("EXPERIMENTAL_CVAR_CONFIRMATION_NEEDED")
 --]]
 
 --[[
+--== ACTIONBAR_RANGE_COLOR ==--
 if InCombatLockdown() then
 return UIParent:RegisterEvent("PLAYER_REGEN_ENABLED", "OnEnable")
 end

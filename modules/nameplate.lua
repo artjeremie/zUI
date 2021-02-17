@@ -1,10 +1,10 @@
 -- Friendly nameplates width and height
-local zUIplate = CreateFrame("Frame")
-zUIplate:HookScript("OnEvent", function()
+local zUIPlate = CreateFrame("Frame")
+zUIPlate:HookScript("OnEvent", function()
   C_NamePlate.SetNamePlateFriendlySize(60, 30)
 end)
 
-zUIplate:RegisterEvent("PLAYER_LOGIN")
+zUIPlate:RegisterEvent("PLAYER_LOGIN")
 
 -- Health percent
 hooksecurefunc("CompactUnitFrame_UpdateHealth", function(frame)

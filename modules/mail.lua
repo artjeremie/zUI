@@ -1,13 +1,13 @@
 local msgPre = "Gold collected from Mail! "
-local sMail = CreateFrame("Frame")
+local zUIMail = CreateFrame("Frame")
 local moneyInMail = 0
 local moneyOverall = 0
 
-sMail:RegisterEvent("MAIL_SHOW")
-sMail:RegisterEvent("CLOSE_INBOX_ITEM")
-sMail:RegisterEvent("MAIL_CLOSED")
+zUIMail:RegisterEvent("MAIL_SHOW")
+zUIMail:RegisterEvent("CLOSE_INBOX_ITEM")
+zUIMail:RegisterEvent("MAIL_CLOSED")
 
-sMail:SetScript("OnEvent", function(self, event, ...)
+zUIMail:SetScript("OnEvent", function(self, event, ...)
   if event == "MAIL_SHOW" then
     moneyCurrent = GetMoney()
   elseif event == "CLOSE_INBOX_ITEM" then

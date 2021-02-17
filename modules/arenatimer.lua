@@ -1,12 +1,12 @@
-local sArenaTimer = CreateFrame("Frame")
-sArenaTimer:RegisterEvent("PLAYER_LOGIN")
-sArenaTimer:SetScript("OnEvent", function(self, event)
+local zUITimer = CreateFrame("Frame")
+zUITimer:RegisterEvent("PLAYER_LOGIN")
+zUITimer:SetScript("OnEvent", function(self, event)
   
   local sTimer = CreateFrame("Frame")
   local queueTime
   local queue = 0
   local remaining = 0
-  sTimerDB = sTimerDB or {announce = "self"}
+  zUITimerDB = zUITimerDB or {announce = "self"}
   
   PVPReadyDialog.leaveButton:Hide()
   -- Prevent other mods from showing the button
@@ -21,7 +21,7 @@ sArenaTimer:SetScript("OnEvent", function(self, event)
   end
   
   local function PrintTime()
-    local announce = sTimerDB.announce
+    local announce = zUITimerDB.announce
     if announce == "off" then
       return
     end

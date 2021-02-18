@@ -41,5 +41,43 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
 - **EasyDelete**
   - Add DELETE word when deleting valuable item.
 - **Grid**
-  - type /zl to overlay grid on-screen to aid in aligning the user interface.
-
+  - type `/zl` to overlay grid on-screen to aid in aligning the user interface.
+- **Latency**
+  - Shows `fps` and `latency`
+    - Latency configuration in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\latency.lua*.
+    ```lua
+    zUILatency.text:SetPoint("CENTER", zUILatency) -- line 28, change position.
+    zUILatency.text:SetFont("FONTS\\FRIZQT__.TTF", 11, "OUTLINE") -- line 29, change font.
+    zUILatency.text:SetTextColor(color.r, color.g, color.b) -- line 30, change color.
+    ```
+- **Mail**
+  - Show total gold collected from mail.
+- **Nameplates**
+  - Changed friendly player nameplate size.
+  - Added health percentage.
+    - Nameplates configuration in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\nameplate.lua*.
+    ```lua
+    C_NamePlate.SetNamePlateFriendlySize(90, 30) -- line 4, friendly player nameplate size.
+    frame.health:SetSize(170, 16) -- line 16, percent text size.
+    frame.health:SetPoint("CENTER", frame.healthBar) -- line 20, percent text position.
+    frame.health.text:SetVertexColor(1, 1, 1) -- line 21, percent text color.
+    frame.health.text:SetFont("FONTS\\FRIZQT__.TTF", 11, "OUTLINE") -- line 22, percent text font.
+    ```
+- **Tooltip**
+  - Show target of target in tooltip
+  - Tooltip configuration in : *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\tooltip.lua*.
+  ```lua
+  GameTooltip:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -85, 50) -- line 55, move tooltip position.
+  ```
+- **Unitframes**
+  - Transparent unitframe background.
+  - Option to have class color frame.
+  - Option to hide pvp icon.
+  - Option to disable feedback text.
+  - Option to show combat indicator icon.
+  - Option to Set rare dragon in player portrait.
+- **Others**
+  - Move player debuff in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\buffs.lua*.
+  ```lua
+  DebuffButton1:SetPoint("TOP", UIParent, "TOPLEFT", 475, -215) -- line 8, move player debuff position.
+  ```

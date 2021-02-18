@@ -20,9 +20,8 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   - Cast bar timer.
   - Adjust scale of cast bar for awareness.
     - Set the cast bar scale in *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\castbar.lua*.
-    - line 8
     ```lua
-    CastingBarFrame.Icon:SetSize(38, 38)
+    CastingBarFrame.Icon:SetSize(38, 38) -- line 8
     ```
     for player.
     - line 41 and 42 `FocusFrameSpellBar:SetScale(1.50), TargetFrameSpellBar:SetScale(1.50)` for focus and target.

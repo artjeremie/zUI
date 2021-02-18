@@ -21,13 +21,14 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   - Adjust scale of cast bar for awareness.
     - Set the cast bar scale in *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\castbar.lua*.
     ```lua
-    CastingBarFrame.Icon:SetSize(38, 38) -- line 8
+    CastingBarFrame.Icon:SetSize(38, 38) -- line 8, scale.
+    FocusFrameSpellBar:SetScale(1.50) -- line 41, focus scale.
+    TargetFrameSpellBar:SetScale(1.50) -- line 42, target scale.
+    CastingBarFrame.Icon:SetPoint("RIGHT", CastingBarFrame, "LEFT", -10, 5) -- line 9, move spell icon.
+    CastingBarFrame.timer:SetPoint("LEFT", CastingBarFrame, "RIGHT", 5, 0) -- line 14, move spell timer.
+    CastingBarFrame.timer:SetFont("FONTS\\FRIZQT__.TTF", 16, "THICKOUTLINE") -- line 13, change font.
+
     ```
-    for player.
-    - line 41 and 42 `FocusFrameSpellBar:SetScale(1.50), TargetFrameSpellBar:SetScale(1.50)` for focus and target.
-    - Move spell icon in line 9 `CastingBarFrame.Icon:SetPoint("RIGHT", CastingBarFrame, "LEFT", -10, 5)`.
-    - Move spell timer in line 14 `CastingBarFrame.timer:SetPoint("LEFT", CastingBarFrame, "RIGHT", 5, 0)`.
-    - Change font in line 13 `CastingBarFrame.timer:SetFont("FONTS\\FRIZQT__.TTF", 16, "THICKOUTLINE")`.
 - **Chat**
   - Abbreviated chat channels.
   - Disable tab flashing.

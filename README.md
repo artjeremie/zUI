@@ -19,7 +19,7 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   - Show spell icon in left side of the cast bar.
   - Cast bar timer.
   - Adjust scale of cast bar for awareness.
-    - Set the cast bar scale in *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\castbar.lua*.
+    - Cast bar configuration in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\castbar.lua*.
     ```lua
     CastingBarFrame.Icon:SetSize(38, 38) -- line 8, scale.
     FocusFrameSpellBar:SetScale(1.50) -- line 41, focus scale.

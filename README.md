@@ -35,7 +35,7 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   - Chat fade hide.
   - Chat can now be move at the end of the screen.
   - Option to hide editbox background.
-  - Option to hide Chat frame buttons/Voice button.
+  - Option to hide Chat frame buttons/voice button.
 - **Coordinates**
   - Show coordinates and player position on mouseover at the top border of the map.
 - **EasyDelete**
@@ -81,3 +81,5 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   ```lua
   DebuffButton1:SetPoint("TOP", UIParent, "TOPLEFT", 475, -215) -- line 8, move player debuff position.
   ```
+  - To replace combat font rename the font you want to use and rename it to font.ttf, then place it in:
+  - *\World of Warcraft\_retail_\Interface\AddOns\zUI\media\font.ttf*.

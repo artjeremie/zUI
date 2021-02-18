@@ -1,4 +1,4 @@
-# zUI
+# zUI ![zUI logo](https://i.imgur.com/BK51PL7.png)
 ![Curseforge](https://www.curseforge.com/wow/addons)
 
 zUI is a lightweight modification of World of Warcraft Blizzard UI.
@@ -99,10 +99,11 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   - Auto sell grey items.
   - Auto repair items.
   - In-game commands.
-    - `/zr` to reload.
-    - `/zl` show grids.
-    - `/fs` framestack.
+    - `/zui` To show configuration.
+    - `/zr` To reload.
+    - `/zl` Show grids.
+    - `/fs` Framestack.
     - `/lg` Auto chat thanks when leaving group.
-    - `/rm` random mount.
-    - `/zhelp` to show this help commands.
+    - `/rm` Random mount.
+    - `/zhelp` To show this help commands.
 

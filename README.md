@@ -3,6 +3,8 @@
 
 zUI is a lightweight modification of World of Warcraft Blizzard UI.
 
+![zUI_Full](https://i.imgur.com/rpOT1yz.jpg)
+
 ### Features
 - **Actionbar**
   - Removed action bar gryphons.

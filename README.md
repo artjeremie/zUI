@@ -1,5 +1,5 @@
 # zUI ![zUI logo](https://i.imgur.com/BK51PL7.png)
-![Curseforge](https://www.curseforge.com/wow/addons)
+![Curseforge](https://www.curseforge.com/wow/addons/zui)
 ![Github](https://github.com/hoaxdream/zUI)
 ![Issues](https://github.com/hoaxdream/zUI/issues)
 

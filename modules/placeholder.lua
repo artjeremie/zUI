@@ -54,5 +54,4 @@ end
 do
 hooksecurefunc("ActionButton_UpdateRangeIndicator", UpdateRange)
 end
--- testend
 --]]

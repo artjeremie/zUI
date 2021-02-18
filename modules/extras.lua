@@ -1,6 +1,6 @@
-local zUIWatch = CreateFrame("Frame")
-zUIWatch:RegisterEvent("PLAYER_LOGIN")
-zUIWatch:SetScript("OnEvent", function(self, event)
+local zUIStopWatch = CreateFrame("Frame")
+zUIStopWatch:RegisterEvent("PLAYER_LOGIN")
+zUIStopWatch:SetScript("OnEvent", function(self, event)
   
   -- Stopwatch
   Stopwatch_Toggle()

@@ -9,7 +9,7 @@ end)
 function m:OnLoad()
   eventHandler:RegisterEvent("PLAYER_LOGIN")
   
-  -- Hide artwork
+  -- Hide background artwork in actionbar.
   MainMenuBarArtFrameBackground.BackgroundSmall:SetAlpha(0)
   MainMenuBarArtFrameBackground.BackgroundLarge:SetAlpha(0)
   MainMenuBarArtFrameBackground.QuickKeybindGlowLarge:SetAlpha(0)
@@ -25,18 +25,17 @@ function m:OnLoad()
   SlidingActionBarTexture0:SetAlpha(0)
   SlidingActionBarTexture1:SetAlpha(0)
   
-  -- Extra buttons hide background
+  -- Extra buttons hide background artwork.
   ExtraActionButton1.style:SetAlpha(0)
   ZoneAbilityFrame.Style:SetAlpha(0)
-  ZoneAbilityFrame.Style:Hide()
   
-  -- Adjust gap between main & bottom right bars to accomodate extra buttons
+  -- Adjust the gap between main & bottom right bars for the extra buttons.
   MultiBarBottomRightButton1:ClearAllPoints()
   MultiBarBottomRightButton1:SetPoint("LEFT", ActionButton12, "CENTER", 89, 0)
   MultiBarBottomRightButton7:ClearAllPoints()
   MultiBarBottomRightButton7:SetPoint("LEFT", MultiBarBottomLeftButton12, "CENTER", 89, 0)
   
-  -- Hide xp bar. Don't touch MainMenuBar
+  -- Hide xp bar. Let's not touch MainMenuBar!
   MainMenuBarArtFrameBackground:ClearAllPoints()
   MainMenuBarArtFrameBackground:SetPoint("LEFT", MainMenuBar)
   
@@ -44,14 +43,14 @@ function m:OnLoad()
     bar:SetPoint("BOTTOM", MainMenuBarArtFrameBackground, 0, select(5, bar:GetPoint()))
   end)
   
-  -- MainMenuBar blocks click action on some moved buttons
+  -- MainMenuBar blocks click action on some moved buttons.
   MainMenuBar:EnableMouse(false)
   
-  -- UIParent_ManageFramePosition will ignore a frame if it's user-placed
+  -- UIParent_ManageFramePosition will ignore a frame if it's user-placed.
   MultiBarBottomLeft:SetMovable(true)
   MultiBarBottomLeft:SetUserPlaced(true)
   
-  -- Fix position of pet bar
+  -- Fix position of pet bar.
   local petAnchor = CreateFrame("Frame", nil, PetActionBarFrame)
   petAnchor:SetSize(509, 43)
   for i = 1, 10 do
@@ -64,7 +63,7 @@ function m:OnLoad()
     end
   end
   
-  -- Fix position of stance bar
+  -- Fix position of stance bar.
   StanceBarFrame.ignoreFramePositionManager = true
   
   hooksecurefunc("UIParent_ManageFramePosition", function(index)
@@ -91,7 +90,7 @@ function m:OnLoad()
     end
   end)
   
-  -- Fix texture size on stance bar when bottom left bar is disabled
+  -- Fix texture size on stance bar when bottom left bar is disabled.
   local sizeHook = false
   
   local function widthFunc(self)
@@ -152,7 +151,7 @@ function eventHandler:PLAYER_LOGIN()
     return
   end
   
-  -- moving the bar here because PLAYER_LOGIN is called after layout-local.txt settings
+  -- Moving the bar here because PLAYER_LOGIN is called after layout-local.txt settings.
   MultiBarBottomLeft:ClearAllPoints()
   MultiBarBottomLeft:SetPoint("BOTTOMLEFT", ActionButton1, "TOPLEFT", 0, 6)
 end

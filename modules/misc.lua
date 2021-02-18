@@ -7,9 +7,21 @@ eventHandler:SetScript("OnEvent", function(self, event, ...)
 end)
 
 function m:OnLoad()
-  -- Short slash command to reload UI
+  -- Short slash command to reload UI.
   SLASH_ZUI_RELOAD1 = "/zr"
   SlashCmdList["ZUI_RELOAD"] = ReloadUI
+  
+  -- Help command
+  SLASH_ZUI_CMD1 = "/zhelp"
+  SlashCmdList["ZUI_CMD"] = function()
+    print("|cff00ff00z|r|cff009cffUI|r " .. "|cfffbff00" .. "Command List:")
+    print("|cfffbff00" .. "/zui " .. "|cff00fffb" .. "Open Configuration")
+    print("|cfffbff00" .. "/zl " .. "|cff00fffb" .. "Show Grids")
+    print("|cfffbff00" .. "/lg " .. "|cff00fffb" .. "Leave Group")
+    print("|cfffbff00" .. "/rm " .. "|cff00fffb" .. "Random Mount")
+    print("|cfffbff00" .. "/zr " .. "|cff00fffb" .. "Reload")
+    print("|cfffbff00" .. "/zhelp " .. "|cff00fffb" .. "Show Command List Again")
+  end
   
   -- Fstack
   SLASH_FRAMESTK1 = "/fs"
@@ -40,11 +52,11 @@ function m:OnLoad()
   -- Damage font
   DAMAGE_TEXT_FONT = "Interface\\AddOns\\zUI\\media\\font.ttf"
   
-  -- Hide minimap zoom icons
+  -- Hide minimap zoom icons.
   MinimapZoomIn:Hide()
   MinimapZoomOut:Hide()
   
-  -- Enable zooming on minimap with scrollwheel
+  -- Enable zooming on minimap with scrollwheel.
   Minimap:EnableMouseWheel(true)
   Minimap:SetScript("OnMouseWheel", function(self, arg1)
     if arg1 > 0 then
@@ -54,14 +66,14 @@ function m:OnLoad()
     end
   end)
   
-  -- Move minimap and hide some stuff
+  -- Move minimap and hide some stuff.
   MiniMapWorldMapButton:Hide()
   MinimapBorderTop:Hide()
   --[[
 MinimapCluster:ClearAllPoints()
 MinimapCluster:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -5, -14)
   --]]
-  -- Move minimap zone text
+  -- Move minimap zone text.
   MinimapZoneText:ClearAllPoints()
   MinimapZoneText:SetPoint("TOPRIGHT", UIParent, "TOPRIGHT", -20, -7)
   MinimapZoneText:SetFont("FONTS\\FRIZQT__.TTF", 10, "OUTLINE")
@@ -102,9 +114,11 @@ function m:OnProfileChange()
   self:HideEffects(self.db.hideEffects)
   self:HideMapFade(self.db.hideMapFade)
   self:HideScriptErrors(self.db.hideScriptErrors)
+  self:MaxCamDistance(self.db.maxCamDistance)
+  self:EnableActionCamera(self.db.enableActionCamera)
 end
 
--- Show dampening indicator in arenas only
+-- Show dampening indicator in arenas only.
 function eventHandler:PLAYER_ENTERING_WORLD()
   self:SetShown(select(2, IsInInstance()) == "arena")
   if m.queuedPostureCheck then
@@ -113,7 +127,7 @@ function eventHandler:PLAYER_ENTERING_WORLD()
   end
 end
 
--- Auto sell grey items
+-- Auto sell grey items.
 function eventHandler:MERCHANT_SHOW()
   totalPrice = 0
   for bags = 0, 4 do
@@ -136,7 +150,7 @@ function eventHandler:MERCHANT_SHOW()
     print("Sold your gray items for " .. GetCoinTextureString(totalPrice))
   end
   
-  -- Repairs
+  -- Auto repair items.
   if (CanMerchantRepair()) then
     local cost = GetRepairAllCost()
     if cost > 0 then
@@ -156,7 +170,7 @@ function m:ShowGreetings(disabled)
   if disabled then
     print("")
   else
-    print("Welcome to |cff00ff00z|r|cff009cffUI|r use |CFFFAC025/zl|r for grids & |CFFFAC025/zr|r to reload.")
+    print("Welcome to |cff00ff00z|r|cff009cffUI|r type |cfffbff00/zhelp|r for list of commands.")
   end
 end
 
@@ -217,6 +231,32 @@ function m:HideScriptErrors(hide)
   SetCVar("scriptErrors", hide and 0 or 1)
 end
 
+function m:MaxCamDistance(enable)
+  self.db.maxCamDistance = enable
+  if enable then
+    SetCVar("cameraDistanceMaxZoomFactor", 2.6)
+  else
+    SetCVar("cameraDistanceMaxZoomFactor", 1.9)
+  end
+end
+
+UIParent:UnregisterEvent("EXPERIMENTAL_CVAR_CONFIRMATION_NEEDED")
+
+function m:EnableActionCamera(enable)
+  self.db.enableActionCamera = enable
+  if enable then
+    SetCVar("ActionCam", full)
+    SetCVar("test_cameraDynamicPitch", 1)
+    SetCVar("test_cameraDynamicPitchBaseFovPad", 0.35)
+    SetCVar("CameraKeepCharacterCentered", 0)
+  else
+    SetCVar("ActionCam", off)
+    SetCVar("test_cameraDynamicPitch", 0)
+    SetCVar("test_cameraDynamicPitchBaseFovPad", 0.4)
+    SetCVar("CameraKeepCharacterCentered", 1)
+  end
+end
+
 m.defaultSettings = {
   showGreetings = false,
   hideUIErrorsFrame = true,
@@ -227,6 +267,8 @@ m.defaultSettings = {
   hideEffects = true,
   hideMapFade = true,
   hideScriptErrors = true,
+  enableActionCamera = true,
+  maxCamDistance = true,
 }
 
 m.optionsTable = {
@@ -318,6 +360,26 @@ m.optionsTable = {
     order = 10,
     set = function(info, val)
       m:HideScriptErrors(val)
+    end,
+  },
+  maxCamDistance = {
+    name = "Camera Distance",
+    desc = "Set camera zoom distance to max(2.6).",
+    type = "toggle",
+    width = "full",
+    order = 11,
+    set = function(info, val)
+      m:MaxCamDistance(val)
+    end,
+  },
+  enableActionCamera = {
+    name = "Action Camera",
+    desc = "\"Experimental feature\", Set to \"Allow Dynamic Camera Movement\" in Accessibility.",
+    type = "toggle",
+    width = "full",
+    order = 12,
+    set = function(info, val)
+      m:EnableActionCamera(val)
     end,
   },
 }

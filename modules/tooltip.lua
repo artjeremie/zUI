@@ -4,8 +4,8 @@ local TARGET_PREFIX = TARGET .. ":|cffffffff "
 local zUIToT = {}
 
 --[[
-hook the game tool tip updates, this ensures when a mouseover targets target changes
-the tooltip will update
+Hook the game tool tip updates, this ensures when a mouseover targets target changes
+the tooltip will update.
 --]]
 GameTooltip:HookScript("OnUpdate", function(self, ...)
   zUIToT:AddTargetToTT()
@@ -23,7 +23,7 @@ function zUIToT:AddTargetToTT()
   for i = 2, GameTooltip:NumLines() do
     targetLine = _G["GameTooltipTextLeft" .. i]
     if (targetLine:GetText():find(TARGET)) then
-      -- if we find it, we'll use it later instead of adding a new line
+      -- If we find it, we'll use it later instead of adding a new line.
       useExisting = true
       break
     end
@@ -31,13 +31,13 @@ function zUIToT:AddTargetToTT()
   
   zUITarget = UnitName("mouseovertarget")
   
-  -- modify if they are targeting you
+  -- Modify if they are targeting you.
   if zUITarget == UnitName("player") then
     zUITarget = "<YOU>"
   end
   
   if (zUITarget ~= nil and zUITarget ~= "") then
-    -- either use the existing line and set it's text, or add the new line of text
+    -- Either use the existing line and set it's text, or add the new line of text.
     if useExisting then
       targetLine:SetText(string.format("%s %s |r", TARGET_PREFIX, zUITarget))
     else

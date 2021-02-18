@@ -1,7 +1,7 @@
 local Coords_UpdateInterval = 0.2
 timeSinceLastUpdate = 0
 
--- Setup event frame
+-- Setup event frame.
 local Coords_eventFrame = CreateFrame("Frame")
 Coords_eventFrame:RegisterEvent("VARIABLES_LOADED")
 Coords_eventFrame:RegisterEvent("ZONE_CHANGED_NEW_AREA")
@@ -11,7 +11,7 @@ Coords_eventFrame:SetScript("OnEvent", function(self, event, ...)
   self[event](self, event, ...)
 end)
 
--- Parse events handlers
+-- Parse events handlers.
 function Coords_eventFrame:VARIABLES_LOADED()
   Coords_eventFrame:SetScript("OnUpdate", function(self, elapsed)
     Coords_OnUpdate(self, elapsed)
@@ -26,25 +26,22 @@ end
 function Coords_eventFrame:ZONE_CHANGED()
   Coords_UpdateCoords()
 end
---[[ OnUpdate ]]
---
+-- OnUpdate
 function Coords_OnUpdate(self, elapsed)
   timeSinceLastUpdate = timeSinceLastUpdate + elapsed
   if (timeSinceLastUpdate > Coords_UpdateInterval) then
-    -- Update the update time
+    -- Update the update time.
     timeSinceLastUpdate = 0
     Coords_UpdateCoords()
   end
 end
---[[ WorldMapCoords ]]
---
+-- WorldMapCoords
 function Coords_UpdateCoords()
   if (WorldMapFrame:IsVisible()) then
     if (IsInInstance()) then
       playerWMText = ""
     else
-      --[[ Calculate Player position ]]
-      --
+      -- Calculate Player position.
       local _P = GetUnitName("player")
       local mapID = C_Map.GetBestMapForUnit("player")
       if mapID then
@@ -62,8 +59,7 @@ function Coords_UpdateCoords()
         playerWMText = " | " .. _P .. ": (" .. format("%.1f, %.1f", playerX * 100, playerY * 100) .. ")"
       end
     end
-    --[[ Calculate Cursor position ]]
-    --
+    -- Calculate Cursor position.
     if (IsInInstance()) then
       cursorWMText = ""
     else
@@ -76,8 +72,7 @@ function Coords_UpdateCoords()
         cursorWMText = ""
       end
     end
-    --[[ Add text to world map top border ]]
-    --
+    -- Add text to world map top border.
     WorldMapFrame.BorderFrame.TitleText:SetText(MAP_AND_QUEST_LOG .. playerWMText .. cursorWMText)
   end
 end

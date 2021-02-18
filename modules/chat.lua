@@ -8,14 +8,14 @@ end)
 
 function m:OnLoad()
   
-  -- Enable arrow keys for normal and existing chat frames
+  -- Enable arrow keys for normal and existing chat frames.
   for i = 1, 50 do
     if _G["ChatFrame" .. i] then
       _G["ChatFrame" .. i .. "EditBox"]:SetAltArrowKeyMode(false)
     end
   end
   
-  -- Lets make it short
+  -- Abbreviated chat channles.
   CHAT_SAY_GET = "[S] %s: "
   CHAT_YELL_GET = "[Y] %s: "
   CHAT_WHISPER_GET = "[F] %s: "
@@ -86,14 +86,14 @@ function m:OnLoad()
   
   for i = 1, 10 do
     local fcl = _G[format("%s%d", "ChatFrame", i)]
-    --skip combatlog and frames with no messages registered
+    --skip combatlog and frames with no messages registered.
     if i ~= 2 then
       newAddMsg[format("%s%d", "ChatFrame", i)] = fcl.AddMessage
       fcl.AddMessage = AddMessage
     end
   end
   
-  --Tab flasing
+  -- Disable tab flashing
   FCF_FlashTab = function()
   end
   FCFTab_UpdateAlpha = function()
@@ -114,7 +114,7 @@ function m:OnLoad()
   ChatFrame1EditBox:SetPoint("BOTTOMLEFT", ChatFrame1, "TOPLEFT", -5, 2)
   ChatFrame1EditBox:SetPoint("RIGHT", ChatFrame1, 5, 0)
   
-  -- Resize and move to end of screen
+  -- Resize and move to end of screen.
   for i = 1, 10 do
     local eb = _G[format("%s%d%s", "ChatFrame", i, "EditBox")]
     local cfs = _G[format("%s%d", "ChatFrame", i)]

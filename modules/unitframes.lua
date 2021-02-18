@@ -31,7 +31,7 @@ function m:OnProfileChange()
   UnitFrameHealthBar_Update(FocusFrameHealthBar, "focus")
 end
 
--- Class colors on health bars
+-- Class colors on health bars.
 local sb = _G.GameTooltipStatusBar
 function eventHandler:UPDATE_MOUSEOVER_UNIT()
   if m.db.classColors[3] then
@@ -63,7 +63,7 @@ function m.ColorStatusbar(statusbar, unit)
   end
 end
 
--- Unitframe class color names
+-- Unitframe class color names.
 hooksecurefunc("UnitFrame_Update", function(self)
   if UnitClass(self.unit) then
     local c = (CUSTOM_CLASS_COLORS or RAID_CLASS_COLORS)[select(2, UnitClass(self.unit))]
@@ -76,7 +76,7 @@ hooksecurefunc("TargetFrame_CheckFaction", function(self)
   self.nameBackground:SetVertexColor(0.0, 0.0, 0.0, 0.5)
 end)
 
--- Ensure chain doesnt clip through pet portrait and rune frame
+-- Ensure chain doesnt clip through pet portrait and rune frame.
 PetPortrait:GetParent():SetFrameLevel(4)
 RuneFrame:SetFrameLevel(4)
 
@@ -112,7 +112,7 @@ function m:HideFeedbackText(hide)
   end
 end
 
--- Combat indicators for target & focus
+-- Combat indicators for target & focus.
 m.TargetCombatIndicator = CreateFrame("Frame", nil, TargetFrame)
 m.TargetCombatIndicator:SetPoint("LEFT", TargetFrame, "RIGHT", -20, 0)
 m.TargetCombatIndicator:SetSize(26, 26)

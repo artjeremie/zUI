@@ -69,7 +69,7 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
     ```
 - **Tooltip**
   - Show target of target in tooltip
-  - Tooltip configuration in : *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\tooltip.lua*.
+    - Tooltip configuration in : *\World of Warcraft\_retail_\Interface\AddOns\zUI\modules\tooltip.lua*.
   ```lua
   GameTooltip:SetPoint("BOTTOMRIGHT", UIParent, "BOTTOMRIGHT", -85, 50) -- line 55, move tooltip position.
   ```

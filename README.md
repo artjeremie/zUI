@@ -81,4 +81,28 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
   ```lua
   DebuffButton1:SetPoint("TOP", UIParent, "TOPLEFT", 475, -215) -- line 8, move player debuff position.
   ```
-  - To replace combat font rename the font you want to use and rename it to font.ttf, then place it in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\media\font.ttf*.
+  - To replace combat font rename the font you want to use to font.ttf, then place it in: *\World of Warcraft\_retail_\Interface\AddOns\zUI\media\font.ttf*.
+  - Raid frame size extender.
+  - Hidden minimap zoom icons.
+  - Enable zoom in/out on minimap with scrollwheel.
+  - Hidden minimap world map border and button.
+  - Arena dampening.
+  - Option to hide UI error frame, except quest objectives.
+  - Option to disable loot item roll won, show loot toast, encounter loot received and boss banner alert frame.
+  - Option to hide loss of control background.
+  - Option to hide micro button bag bar.
+  - Option to disable ffxGlow, ffxNether and ffxDeath.
+  - Option to disable map fade.
+  - Option to hide/show sript errors.
+  - Option to set camera max distance to 2.6 or set to default to 1.9.
+  - Option to enable action cam. Set Allow Dynamic Camera Movement in: *Game Menu-Interface-!Accessibility-!Motion Sickness*.
+  - Auto sell grey items.
+  - Auto repair items.
+  - In-game commands.
+    - `/zr` to reload.
+    - `/zl` show grids.
+    - `/fs` framestack.
+    - `/lg` Auto chat thanks when leaving group.
+    - `/rm` random mount.
+    - `/zhelp` to show this help commands.
+

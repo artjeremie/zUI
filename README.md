@@ -1,5 +1,6 @@
 # zUI ![zUI logo](https://i.imgur.com/BK51PL7.png)
 ![Curseforge](https://www.curseforge.com/wow/addons)
+![Github](https://github.com/hoaxdream/zUI)
 
 zUI is a lightweight modification of World of Warcraft Blizzard UI.
 

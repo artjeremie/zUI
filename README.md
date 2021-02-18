@@ -1,5 +1,5 @@
 # zUI ![zUI logo](https://i.imgur.com/BK51PL7.png)
-![Curseforge](https://www.curseforge.com/wow/addons/zui)
+![Curseforge](https://www.curseforge.com/wow/addons/zui-retail)
 ![Github](https://github.com/hoaxdream/zUI)
 ![Issues](https://github.com/hoaxdream/zUI/issues)
 
@@ -31,7 +31,6 @@ zUI is a lightweight modification of World of Warcraft Blizzard UI.
     CastingBarFrame.Icon:SetPoint("RIGHT", CastingBarFrame, "LEFT", -10, 5) -- line 9, move spell icon.
     CastingBarFrame.timer:SetPoint("LEFT", CastingBarFrame, "RIGHT", 5, 0) -- line 14, move spell timer.
     CastingBarFrame.timer:SetFont("FONTS\\FRIZQT__.TTF", 16, "THICKOUTLINE") -- line 13, change font.
-
     ```
 - **Chat**
   - Abbreviated chat channels.

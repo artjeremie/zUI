@@ -118,6 +118,6 @@ AddOn name | Description
 [BigDebuffs](https://www.curseforge.com/wow/addons/bigdebuffs) | shows debuff in raid frames.
 [Details! Damage Meter](https://www.curseforge.com/wow/addons/details) | low CPU damage meter
 [OmniBar](https://www.curseforge.com/wow/addons/omnibar) | enemy tracker cooldown
-[OmniCC](https://www.curseforge.com/wow/addons/omni-cc) | text ability cooldown
+[OmniCC](https://www.curseforge.com/wow/addons/omni-cc) | ability text cooldown
 [sArena](https://www.curseforge.com/wow/addons/sarena) | enhanced arena frames
 [WeakAuras](https://www.curseforge.com/wow/addons/weakauras-2) | highly customizable to show buffs, debuffs, auras etc..

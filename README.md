@@ -1,4 +1,4 @@
-# zUI ![zUI logo](https://i.imgur.com/KhIjHXh.png)
+# zUI ![zUI logo](https://i.imgur.com/BK51PL7.png)
 ![Curseforge](https://www.curseforge.com/wow/addons/zui-retail)
 ![Github](https://github.com/hoaxdream/zUI)
 ![Issues](https://github.com/hoaxdream/zUI/issues)
